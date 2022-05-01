@@ -1,0 +1,129 @@
+:root {
+	--color-white: #ffffff;
+	--color-black: #3a3a3a;
+	--color-grey1: #8d8d8d;
+	--color-grey2: #bababa;
+	--color-blue1: #4c96d7;
+	--color-blue2: #a6cbeb;
+	--my-font: "Share Tech Mono", monospace;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	font-family: "Share Tech Mono", monospace;
+	margin: 0;
+	color: black;
+	display: grid;
+	grid-template-rows: 1fr;
+}
+
+#wrapper {
+	width: 100%;
+	background-color: var(--color-white);
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 1em;
+}
+header {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-row: 2;
+	align-items: center;
+	text-align: right;
+	padding: 1em;
+}
+
+main {
+	padding-left: 0.25rem;
+}
+
+nav ul {
+	list-style-type: none;
+	display: flex;
+	justify-content: space-evenly;
+	padding: 0.5em 3.5em 0.5em 0;
+	background-color: var(--color-black);
+}
+
+.menu a {
+	color: var(--color-white);
+	text-decoration: none;
+}
+
+.img-sec {
+	display: grid;
+	grid-template-rows: 1fr 100px;
+	justify-items: center;
+}
+#button {
+	display: flex;
+	grid-row: 2;
+	padding: 2.5em;
+}
+
+.delorean-img {
+	width: 90%;
+	grid-row: 1;
+}
+
+.upgrades {
+	display: flex;
+	margin-bottom: 2em;
+	width: 100%;
+}
+.up-sticker {
+	background-color: #4c96d7;
+	height: 6.5em;
+	width: 150px;
+	border: #3a3a3a solid 1px;
+	margin: 0 0 0 0.5em;
+}
+a figure {
+	margin: 0;
+}
+
+figure img {
+	display: block;
+	margin: auto;
+	padding-top: 0.5em;
+}
+
+figure figcaption {
+	text-align: center;
+}
+
+/*content*/
+.d-list,
+.d-list h2 {
+	list-style: none;
+	color: var(--color-blue1);
+	padding: 0;
+	margin: 1em;
+}
+
+footer {
+	bottom: 0;
+}
+
+@media only screen and (min-width: 768px) {
+	body {
+		background-image: url("/phpmotors/images/site/small_check.jpg");
+		background-size: cover;
+	}
+
+	#wrapper {
+		border: 5px solid var(--color-blue1);
+		border-radius: 10px;
+		margin-top: 1em;
+		width: 75%;
+	}
+}

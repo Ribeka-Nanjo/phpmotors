@@ -1,0 +1,28 @@
+@media only screen and (min-width: 768px) {
+	.img-sec {
+		display: grid;
+		grid-template-rows: 50px 1fr;
+		justify-items: start;
+	}
+
+	.delorean-img {
+		width: 90%;
+		grid-row: 2;
+	}
+
+	#button {
+		grid-row: 1;
+		padding: 0;
+		width: 20%;
+		margin-left: 1em;
+	}
+	.d-content {
+		display: flex;
+		flex-direction: row-reverse;
+		margin: 1em;
+	}
+	.d-review,
+	.d-review h2 {
+		margin-left: 1em;
+	}
+}
