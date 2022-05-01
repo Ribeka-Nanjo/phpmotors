@@ -43,7 +43,7 @@ header {
 }
 
 main {
-	padding-left: 0.25rem;
+	padding: 1.25rem;
 }
 
 nav ul {
@@ -83,7 +83,7 @@ nav ul {
 .up-sticker {
 	background-color: #4c96d7;
 	height: 6.5em;
-	width: 150px;
+	width: 180px;
 	border: #3a3a3a solid 1px;
 	margin: 0 0 0 0.5em;
 }
@@ -112,18 +112,5 @@ figure figcaption {
 
 footer {
 	bottom: 0;
-}
-
-@media only screen and (min-width: 768px) {
-	body {
-		background-image: url("/phpmotors/images/site/small_check.jpg");
-		background-size: cover;
-	}
-
-	#wrapper {
-		border: 5px solid var(--color-blue1);
-		border-radius: 10px;
-		margin-top: 1em;
-		width: 75%;
-	}
+	text-align: center;
 }

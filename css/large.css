@@ -1,4 +1,15 @@
 @media only screen and (min-width: 768px) {
+	body {
+		background-image: url("/phpmotors/images/site/small_check.jpg");
+		background-size: cover;
+	}
+
+	#wrapper {
+		border: 5px solid var(--color-blue1);
+		border-radius: 10px;
+		margin-top: 1em;
+		width: 75%;
+	}
 	.img-sec {
 		display: grid;
 		grid-template-rows: 50px 1fr;
@@ -9,6 +20,10 @@
 		width: 90%;
 		grid-row: 2;
 	}
+	nav a:hover {
+		color: #3a3a3a;
+		background-color: #fff;
+	}
 
 	#button {
 		grid-row: 1;
@@ -16,10 +31,15 @@
 		width: 20%;
 		margin-left: 1em;
 	}
+	.up-sticker {
+		width: 160px;
+		display: flex;
+	}
 	.d-content {
 		display: flex;
 		flex-direction: row-reverse;
 		margin: 1em;
+		justify-content: space-evenly;
 	}
 	.d-review,
 	.d-review h2 {
