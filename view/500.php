@@ -8,7 +8,6 @@
 
   <title>Content Title | PHP Motors</title>
 
-
   <link href="/phpmotors/css/normalize.css" type="text/css" rel="stylesheet" media="screen">
   <link href="/phpmotors/css/base.css" type="text/css" rel="stylesheet" media="screen">
   <link href="/phpmotors/css/large.css" type="text/css" rel="stylesheet" media="screen">
@@ -28,7 +27,8 @@
     </nav>
 
     <main>
-      <h1>Content Title Here</h1>
+    <h1>SERVER ERROR</h1>
+      <p>Sorry, our servers seems to be experiencing some technical difficulties</p>
     </main>
 
     <hr>
