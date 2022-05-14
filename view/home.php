@@ -20,7 +20,8 @@
             <?php include $_SERVER['DOCUMENT_ROOT'] . "/phpmotors/common/header.php" ?>
         </header>
         <nav>
-            <?php include $_SERVER['DOCUMENT_ROOT'] . "/phpmotors/common/nav.php" ?>
+           <?php //include $_SERVER['DOCUMENT_ROOT'] . "/phpmotors/common/nav.php";
+           echo $navList; ?> 
         </nav>
         <main>
             <h1>Welcome to PHP Motors</h1>

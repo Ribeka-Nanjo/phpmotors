@@ -54,9 +54,20 @@ nav ul {
 	background-color: var(--color-black);
 }
 
-.menu a {
+a {
 	color: var(--color-white);
 	text-decoration: none;
+}
+
+#account {
+	color: var(--color-black);
+	margin: 1em;
+	padding: 0.5em;
+}
+
+#account:hover {
+	background-color: var(--color-grey2);
+	border-radius: 1em;
 }
 
 .img-sec {
@@ -112,5 +123,73 @@ figure figcaption {
 
 footer {
 	bottom: 0;
+	text-align: center;
+}
+
+/* LOGIN page */
+
+.login {
+	color: var(--color-black);
+}
+
+#login ul {
+	list-style-type: none;
+	display: table;
+	margin: 1.5em auto 1.5em;
+	padding: 0 4em;
+	background-color: var(--color-white);
+}
+
+/* Registeration page */
+
+#regist ul {
+	list-style-type: none;
+	display: table;
+	margin: 0 auto;
+	padding: 2em;
+	border-radius: 5px;
+}
+.regist {
+	color: var(--color-black);
+	text-decoration: underline;
+}
+
+/*LOGIN page and Registration page*/
+#login fieldset,
+#regist fieldset {
+	background-color: var(--color-white);
+	max-width: 530px;
+	margin: auto;
+}
+
+#login legend,
+#regist legend {
+	max-width: 750px;
+	font-size: 1.5em;
+	padding: 0.5em;
+	background-color: var(--color-blue2);
+	text-align: center;
+}
+
+#name,
+#fName,
+#password,
+#address {
+	height: 30px;
+	width: 250px;
+	margin: 0.5em 0 0.5em 0;
+}
+div .button {
+	text-align: center;
+}
+.loginbtn,
+.registbtn {
+	margin: 1em;
+	border-radius: 10px;
+	width: 120px;
+}
+
+button .loginbtn,
+.psw {
 	text-align: center;
 }
