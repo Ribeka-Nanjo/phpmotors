@@ -24,35 +24,40 @@
     </header>
 
     <nav>
-      <?php include $_SERVER['DOCUMENT_ROOT'] . "/phpmotors/common/nav.php" ?>
+    <?php //include $_SERVER['DOCUMENT_ROOT'] . "/phpmotors/common/nav.php";
+           echo $navList; ?> 
     </nav>
 
     <main>
-    <form id="regist" method="post">
+
+    <form action="/phpmotors/accounts/index.php" id="regist" method="post">
     <fieldset>
         <legend> Create New Account </legend>
+
+        <?php if (isset($message)) { echo $message;}
+    ?>
         <ul>
             <li>
                 <label for="fName">First Name: </label><br>
-                <input type="text"  placeholder="First Name" id="fName" name="fName">
+                <input type="text"  placeholder="First Name" id="fName" name="clientFirstname">
             </li>
             <li>
                 <label for="name"> Last Name: </label><br>
-                <input type="text"  placeholder="Last Name" id="name" name="name">
+                <input type="text"  placeholder="Last Name" id="name" name="clientLastname">
             </li>
             <li>
                 <label for="address">Email Address: </label><br>
-                <input type="text"  placeholder="Email Address" id="address" name="address">
+                <input type="email"  placeholder="Email Address" id="address" name="clientEmail">
             </li>
             <li>
                 <label for="password">Password:</label><br>
-                <input type="password"  placeholder="Password" id="password" name="password">
+                <input type="password"  placeholder="Password" id="password" name="clientPassword">
             </li>
         </ul>
-        <div class="button">
-    <button type="button" class="registbtn">Create</button>
-  </div>
+        <input type="submit" name="submit" id="registbtn" value="Register">
+        <input type="hidden" name="action" value="register">
         </fieldset>
+       
     </form>          
     </main>
 

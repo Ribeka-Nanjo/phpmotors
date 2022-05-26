@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Login page | PHP Motors</title>
+  <title>Add vehicle page| PHP Motors</title>
 
 
   <link href="/phpmotors/css/normalize.css" type="text/css" rel="stylesheet" media="screen">
@@ -24,30 +24,19 @@
     </header>
 
     <nav>
-    <?php //include $_SERVER['DOCUMENT_ROOT'] . "/phpmotors/common/nav.php";
-           echo $navList; ?> 
+    <?php echo $navList; ?> 
     </nav>
+
     <main>
     <?php if (isset($message)) { echo $message;}
     ?>
-    <form id="login" method="post">
-    <fieldset>
-        <legend> Login </legend>
-        <ul>
-            <li>
-                <label class="label" for="name">User Name: </label><br>
-                <input type="text" placeholder="Username" id="name" name="name">
-            </li>
-            <li>
-                <label class="label" for="password">Password: </label><br>
-                <input type="password" placeholder="Password" id="password" name="password">
-            </li>
-        </ul>
-        <div class="button">
-    <button type="button" class="loginbtn">LOGIN</button><br>
-    <span class="psw">No account? <a class="regist" href="/phpmotors/accounts?action=registration.php">Sign-up</a></span>
-  </div>
-</fieldset>
+    <form action="/phpmotors/vehicles/index.php" id="addClass" method="post">
+        <h1> Add Car Classification </h1>
+        <label for="carType"> Classification Name: </label><br>
+        <input type="text" id="carType" name="classificationName">
+        <input type="submit" name="submit" id="addClassbtn" value="Addclass">
+        <input type="hidden" name="action" value="addClass">
+       
     </form>          
     </main>
 

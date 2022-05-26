@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Login page | PHP Motors</title>
+  <title>Add Vehicle page| PHP Motors</title>
 
 
   <link href="/phpmotors/css/normalize.css" type="text/css" rel="stylesheet" media="screen">
@@ -19,40 +19,30 @@
 
   <div id="wrapper">
 
-    <header>
+  <header>
       <?php include $_SERVER['DOCUMENT_ROOT'] . "/phpmotors/common/header.php" ?>
     </header>
 
     <nav>
-    <?php //include $_SERVER['DOCUMENT_ROOT'] . "/phpmotors/common/nav.php";
-           echo $navList; ?> 
+    <?php echo $navList; ?> 
     </nav>
+
     <main>
+    <h1>Vehicle Management</h1>
     <?php if (isset($message)) { echo $message;}
     ?>
-    <form id="login" method="post">
-    <fieldset>
-        <legend> Login </legend>
-        <ul>
+    <div class="vehiman">
+         <ul>
             <li>
-                <label class="label" for="name">User Name: </label><br>
-                <input type="text" placeholder="Username" id="name" name="name">
+            <a href="/phpmotors/vehicles?action=add-classification">Add Classification</a>
             </li>
             <li>
-                <label class="label" for="password">Password: </label><br>
-                <input type="password" placeholder="Password" id="password" name="password">
+            <a href="/phpmotors/vehicles?action=add-vehicle">Add Vehicle</a>
             </li>
-        </ul>
-        <div class="button">
-    <button type="button" class="loginbtn">LOGIN</button><br>
-    <span class="psw">No account? <a class="regist" href="/phpmotors/accounts?action=registration.php">Sign-up</a></span>
-  </div>
-</fieldset>
-    </form>          
+        </ul>   
+</div>   
     </main>
-
     <hr>
-
     <footer>
       <?php include $_SERVER['DOCUMENT_ROOT'] . "/phpmotors/common/footer.php" ?>
     </footer>
