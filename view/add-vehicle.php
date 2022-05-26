@@ -37,7 +37,7 @@
     ?></P> 
     <br>
      <ul>
-    <label> <?php echo $classificationList; ?> </label>
+    <li> <?php echo $classificationList; ?> </li>
     <li> <label for="invMake"> Make </label><br>
         <input type="text" id="invMake" name="invMake">
     </li>
