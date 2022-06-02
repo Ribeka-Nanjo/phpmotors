@@ -16,7 +16,7 @@ function regClient($clientFirstname, $clientLastname, $clientEmail, $clientPassw
     // Insert the data
     $stmt->execute();
     // Ask how many rows changed as a result of our insert
-    $rowsChanged = $stmt->fetchAll();
+    $rowsChanged = $stmt->rowCount();
     // Close the database interaction
     $stmt->closeCursor();
     // Return the indication of success (rows changed)

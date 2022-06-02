@@ -39,19 +39,19 @@
         <ul>
             <li>
                 <label for="fName">First Name: </label><br>
-                <input type="text"  placeholder="First Name" id="fName" name="clientFirstname">
+                <input type="text"  placeholder="First Name" id="fName" name="clientFirstname" required>
             </li>
             <li>
                 <label for="name"> Last Name: </label><br>
-                <input type="text"  placeholder="Last Name" id="name" name="clientLastname">
+                <input type="text"  placeholder="Last Name" id="name" name="clientLastname" required>
             </li>
             <li>
                 <label for="address">Email Address: </label><br>
-                <input type="email"  placeholder="Email Address" id="address" name="clientEmail">
+                <input type="email"  placeholder="Email Address" id="address" name="clientEmail" required>
             </li>
             <li>
                 <label for="password">Password:</label><br>
-                <input type="password"  placeholder="Password" id="password" name="clientPassword">
+                <input type="password"  placeholder="Password" id="password" name="clientPassword" required>
             </li>
         </ul>
         <input type="submit" name="submit" id="registbtn" value="Register">

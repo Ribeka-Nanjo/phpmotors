@@ -52,6 +52,17 @@ if($regOutcome === 1){
     exit;
    }
     break;
+    case 'login':     
+        // Filter and store the data
+       $clientEmail = filter_input(INPUT_POST, 'clientEmail');
+       $clientPassword = filter_input(INPUT_POST, 'clientPassword');
+       
+       // Check for missing data
+       if(empty($clientEmail) || empty($clientPassword)){
+           $message = '<p>Please provide information for all empty form fields.</p>';
+           include '../view/login.php';
+           exit; 
+          }
     
    case 'login':
     include '../view/login.php';

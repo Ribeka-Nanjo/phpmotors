@@ -28,23 +28,24 @@
            echo $navList; ?> 
     </nav>
     <main>
-    <?php if (isset($message)) { echo $message;}
-    ?>
     <form id="login" method="post">
     <fieldset>
         <legend> Login </legend>
+        <?php if (isset($message)) { echo $message;}
+    ?>
         <ul>
             <li>
-                <label class="label" for="name">User Name: </label><br>
-                <input type="text" placeholder="Username" id="name" name="name">
+                <label for="address">Email Address: </label><br>
+                <input type="email"  placeholder="Email Address" id="address" name="clientEmail" required>
             </li>
             <li>
                 <label class="label" for="password">Password: </label><br>
-                <input type="password" placeholder="Password" id="password" name="password">
+                <input type="password" placeholder="Password" id="password" name="password" required>
             </li>
         </ul>
         <div class="button">
-    <button type="button" class="loginbtn">LOGIN</button><br>
+        <input type="submit" name="submit" id="registbtn" value="Login">
+        <input type="hidden" name="action" value="login"><br>
     <span class="psw">No account? <a class="regist" href="/phpmotors/accounts?action=registration.php">Sign-up</a></span>
   </div>
 </fieldset>
