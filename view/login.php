@@ -36,11 +36,14 @@
         <ul>
             <li>
                 <label for="address">Email Address: </label><br>
-                <input type="email"  placeholder="Email Address" id="address" name="clientEmail" required>
+                <input type="email"  placeholder="Email Address" id="address" name="clientEmail" <?php if(isset($clientEmail)){echo "value='$clientEmail'";} ?> required>
             </li>
             <li>
                 <label class="label" for="password">Password: </label><br>
-                <input type="password" placeholder="Password" id="password" name="password" required>
+                <span>Passwords must be at least 8 characters and contain at least 1 number, 
+                    1 capital letter and 1 special character</span><br>
+                <input type="password" placeholder="Password" id="password" name="password" 
+                required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
             </li>
         </ul>
         <div class="button">

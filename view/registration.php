@@ -39,19 +39,22 @@
         <ul>
             <li>
                 <label for="fName">First Name: </label><br>
-                <input type="text"  placeholder="First Name" id="fName" name="clientFirstname" required>
+                <input type="text"  placeholder="First Name" id="fName" name="clientFirstname" <?php if(isset($clientFirstname)){echo "value='$clientFirstname'";} ?> required>
             </li>
             <li>
                 <label for="name"> Last Name: </label><br>
-                <input type="text"  placeholder="Last Name" id="name" name="clientLastname" required>
+                <input type="text"  placeholder="Last Name" id="name" name="clientLastname" <?php if(isset($clientLastname)){echo "value='$clientLastname'";} ?> required>
             </li>
             <li>
                 <label for="address">Email Address: </label><br>
-                <input type="email"  placeholder="Email Address" id="address" name="clientEmail" required>
+                <input type="email"  placeholder="Email Address" id="address" name="clientEmail" <?php if(isset($clientEmail)){echo "value='$clientEmail'";} ?> required>
             </li>
             <li>
                 <label for="password">Password:</label><br>
-                <input type="password"  placeholder="Password" id="password" name="clientPassword" required>
+                <span>Passwords must be at least 8 characters and contain at least 1 number, 
+                    1 capital letter and 1 special character</span><br>
+                <input type="password"  placeholder="Password" id="password" name="clientPassword"
+                required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
             </li>
         </ul>
         <input type="submit" name="submit" id="registbtn" value="Register">

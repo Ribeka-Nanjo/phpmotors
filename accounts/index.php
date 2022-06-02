@@ -5,6 +5,8 @@ require_once '../library/connections.php';
 require_once '../model/main-model.php';
 // Get the accounts model
 require_once '../model/accounts-model.php';
+// Get the functions library
+require_once '../library/functions.php';
 
 
 $classifications = getClassifications();
@@ -27,13 +29,16 @@ $action = filter_input(INPUT_GET, 'action');
      
 case 'register':     
  // Filter and store the data
-$clientFirstname = filter_input(INPUT_POST, 'clientFirstname');
-$clientLastname = filter_input(INPUT_POST, 'clientLastname');
-$clientEmail = filter_input(INPUT_POST, 'clientEmail');
-$clientPassword = filter_input(INPUT_POST, 'clientPassword');
+$clientFirstname = trim(filter_input(INPUT_POST, 'clientFirstname', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
+$clientLastname = trim(filter_input(INPUT_POST, 'clientLastname', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
+$clientEmail =  trim(filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_EMAIL));
+$clientPassword = trim(filter_input(INPUT_POST, 'clientPassword', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
+
+$clientEmail = checkEmail($clientEmail);
+$checkPassword = checkPassword($clientPassword);
 
 // Check for missing data
-if(empty($clientFirstname) || empty($clientLastname) || empty($clientEmail) || empty($clientPassword)){
+if (empty($clientFirstname) || empty($clientLastname) || empty($clientEmail) || empty($checkPassword)) {
     $message = '<p>Please provide information for all empty form fields.</p>';
     include '../view/registration.php';
     exit; 
@@ -56,13 +61,15 @@ if($regOutcome === 1){
         // Filter and store the data
        $clientEmail = filter_input(INPUT_POST, 'clientEmail');
        $clientPassword = filter_input(INPUT_POST, 'clientPassword');
+
+       $clientEmail = checkEmail($clientEmail);
+       $checkPassword = checkPassword($clientPassword);
        
-       // Check for missing data
-       if(empty($clientEmail) || empty($clientPassword)){
-           $message = '<p>Please provide information for all empty form fields.</p>';
-           include '../view/login.php';
-           exit; 
-          }
+       if (empty($clientFirstname) || empty($clientLastname) || empty($clientEmail) || empty($checkPassword)) {
+        $message = '<p>Please provide information for all empty form fields.</p>';
+        include '../view/login.php';
+        exit; 
+       }
     
    case 'login':
     include '../view/login.php';
