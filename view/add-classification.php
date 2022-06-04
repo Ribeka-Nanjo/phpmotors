@@ -33,7 +33,7 @@
     <form action="/phpmotors/vehicles/index.php" id="addClass" method="post">
         <h1> Add Car Classification </h1>
         <label for="carType"> Classification Name: </label><br>
-        <input type="text" id="carType" name="classificationName">
+        <input type="text" id="carType" name="classificationName"  required>
         <input type="submit" name="submit" id="addClassbtn" value="Addclass">
         <input type="hidden" name="action" value="addClass">
        
