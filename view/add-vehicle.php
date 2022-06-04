@@ -1,3 +1,18 @@
+<?php
+$classificationList = '<select id="classificationId" name="classificationId">';
+foreach ($classifications as $classification) {
+    $classificationList .= "<option value= '$classification[classificationId]'";
+    if(isset($classificationId)){
+        if ($classification['classificationId'] === $classificationId){
+         $classificationList .= ' selected ';   
+        }
+    }
+
+    $classificationList .= "> $classification[classificationName] </option>";
+}
+$classificationList .= '</select>';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,14 +54,14 @@
      <ul>
     <li> <?php echo $classificationList; ?> </li>
     <li> <label for="invMake"> Make </label><br>
-        <input type="text" id="invMake" name="invMake">
+        <input type="text" id="invMake" name="invMake" <?php if(isset($invMake)){echo "value='$invMake'";} ?> required >
     </li>
        <li> <label for="invModel"> Model </label><br>
-        <input type="text" id="invModel" name="invModel">
+        <input type="text" id="invModel" name="invModel" <?php if(isset($invModel)){echo "value='$invModel'";} ?> required>
     </li>
     <li>      
         <label for="invDescription"> Description </label><br>
-        <textarea  id="invDescription" name="invDescription"></textarea>
+        <textarea  id="invDescription" name="invDescription" required><?php if(isset($invDescription)){echo "$invDescription";} ?></textarea>
     </li>
     <li>
         <label for="invImage">Image Path</label><br>
@@ -57,15 +72,15 @@
     </li>
     <li>
         <label for="invPrice"> Price </label><br>
-        <input type="text" id="invPrice" name="invPrice">
+        <input type="text" id="invPrice" name="invPrice" <?php if(isset($invPrice)){echo "value='$invPrice'";} ?> required>
     </li>
     <li>
         <label for="invStock"> # In Stock</label><br>
-        <input type="text" id="invStock" name="invStock">
+        <input type="text" id="invStock" name="invStock" <?php if(isset($invStock)){echo "value='$invStock'";} ?> required>
     </li>
     <li>
         <label for="invColor"> Color </label><br>
-        <input type="text" id="invColor" name="invColor">
+        <input type="text" id="invColor" name="invColor" <?php if(isset($invColor)){echo "value='$invColor'";} ?> required>
     </li>
 </ul>
         <input type="submit" name="submit" id="invVehibtn" value="AddVehicle">

@@ -13,12 +13,7 @@ $classifications = getClassifications();
 //var_dump($classifications);
 //exit;
 
-$navList = '<ul>';
-$navList .= "<li><a href='/phpmotors/index.php' title='View the PHP Motors home page'>Home</a></li>";
-foreach ($classifications as $classification) {
- $navList .= "<li><a href='/phpmotors/index.php?action=".urlencode($classification['classificationName'])."' title='View our $classification[classificationName] product line'>$classification[classificationName]</a></li>";
-}
-$navList .= '</ul>';
+$navList = navList($classifications);
 
 $action = filter_input(INPUT_GET, 'action');
  if ($action == NULL){
@@ -43,8 +38,11 @@ if (empty($clientFirstname) || empty($clientLastname) || empty($clientEmail) || 
     include '../view/registration.php';
     exit; 
    }
+
+   $hashedPassword = password_hash($clientPassword, PASSWORD_DEFAULT);
+
 // Send the data to the model
-$regOutcome = regClient($clientFirstname, $clientLastname, $clientEmail, $clientPassword);
+$regOutcome = regClient($clientFirstname, $clientLastname, $clientEmail, $hashedPassword);
 
 // Check and report the result
 if($regOutcome === 1){

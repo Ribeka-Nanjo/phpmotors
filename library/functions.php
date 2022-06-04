@@ -11,4 +11,15 @@ function checkEmail($clientEmail){
     return preg_match($pattern, $clientPassword);
    }
 
+   //Build a navigation bar using classifications array 
+   function navList($classifications){
+    $navList = '<ul>';
+    $navList .= "<li><a href='/phpmotors/index.php' title='View the PHP Motors home page'>Home</a></li>";
+    foreach ($classifications as $classification) {
+     $navList .= "<li><a href='/phpmotors/index.php?action=classification&classificationName=".urlencode($classification['classificationName'])."' title='View our $classification[classificationName] product line'>$classification[classificationName]</a></li>";
+    }
+    $navList .= '</ul>';
+    return $navList;
+   }
+
 ?>
