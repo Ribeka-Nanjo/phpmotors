@@ -65,10 +65,10 @@ $classificationList .= '</select>';
     </li>
     <li>
         <label for="invImage">Image Path</label><br>
-        <input type="text" id="invImage" name="invImage" value="/images/no-image.png">
+        <input type="text" id="invImage" name="invImage" value="/images/no-image.png"  required>
     <li>
         <label for="invThumbnail"> Thumbnail Path </label><br>
-        <input type="text" id="invThumbnail" name="invThumbnail" value="/images/no-image.png">
+        <input type="text" id="invThumbnail" name="invThumbnail" value="/images/no-image.png" required>
     </li>
     <li>
         <label for="invPrice"> Price </label><br>
