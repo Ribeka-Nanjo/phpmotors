@@ -4,6 +4,31 @@
 		background-size: cover;
 	}
 
+	/* For vehicle display in classification view */
+	#inv-display {
+		flex-flow: row wrap;
+		justify-content: flex-start;
+	}
+
+	#inv-display h2 {
+		font-size: 1rem;
+	}
+
+	#inv-display li {
+		max-width: 200px;
+		flex: 1 0 auto;
+		text-align: center;
+		height: 280px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		margin: 5px;
+	}
+
+	#inv-display div {
+		width: 100%;
+	}
+
 	#wrapper {
 		border: 5px solid var(--color-blue1);
 		border-radius: 10px;

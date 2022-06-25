@@ -1,17 +1,12 @@
-<?php
-if ($_SESSION['clientData']['clientLevel'] < 2) {
- header('location: /phpmotors/');
- exit;
-}
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Add vehicle page| PHP Motors</title>
+  <title><?php if(isset($invInfo['invMake'])){ 
+	echo "$invInfo[invMake] $invInfo[invModel]";} ?>|  PHP Motors, Inc.</title>
 
 
   <link href="/phpmotors/css/normalize.css" type="text/css" rel="stylesheet" media="screen">
@@ -29,21 +24,20 @@ if ($_SESSION['clientData']['clientLevel'] < 2) {
     </header>
 
     <nav>
-    <?php echo $navList; ?> 
+    <?php 
+           echo $navList; ?> 
     </nav>
 
     <main>
-    <?php if (isset($message)) { echo $message;}
+    <h1><?php echo " $invInfo[invModel]"; ?> Vehicles</h1>
+    <?php if(isset($message)){
+             echo $message; }
     ?>
-    <form action="/phpmotors/vehicles/index.php" id="addClass" method="post">
-        <h1> Add Car Classification </h1>
-        <label for="carType"> Classification Name: </label><br>
-        <input type="text" id="carType" name="classificationName"  required>
-        <input type="submit" name="submit" id="addClassbtn" value="Addclass">
-        <input type="hidden" name="action" value="addClass">
-       
-    </form>          
+    <?php if(isset($vehicleSpecificInfo)){
+    echo $vehicleSpecificInfo;
+} ?>
     </main>
+
 
     <hr>
 

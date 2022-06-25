@@ -58,7 +58,7 @@
             </li>
         </ul>
         <input type="submit" name="submit" id="registbtn" value="Register">
-        <input type="hidden" name="action" value="register">
+        <input type="hidden" name="action" value="doRegister">
         </fieldset>
        
     </form>          

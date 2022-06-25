@@ -12,8 +12,7 @@ foreach ($classifications as $classification) {
 }
 $classificationList .= '</select>';
 
-?>
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -65,10 +64,11 @@ $classificationList .= '</select>';
     </li>
     <li>
         <label for="invImage">Image Path</label><br>
-        <input type="text" id="invImage" name="invImage" value="/images/no-image.png"  required>
+        <input type="text" id="invImage" name="invImage" value="/images/no-image.png" <?php if(isset($invImage)){echo "value='$invImage'";}  ?> required>
+    </li>
     <li>
         <label for="invThumbnail"> Thumbnail Path </label><br>
-        <input type="text" id="invThumbnail" name="invThumbnail" value="/images/no-image.png" required>
+        <input type="text" id="invThumbnail" name="invThumbnail" value="/images/no-image.png" <?php if(isset($invThumbnail)){echo "value='$invThumbnail'";}  ?> required>
     </li>
     <li>
         <label for="invPrice"> Price </label><br>

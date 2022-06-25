@@ -28,10 +28,13 @@
            echo $navList; ?> 
     </nav>
     <main>
-    <form id="login" method="post">
+    <form id="login" method="post" action="/phpmotors/accounts/">
     <fieldset>
         <legend> Login </legend>
-        <?php if (isset($message)) { echo $message;}
+        <?php if (isset($_SESSION['message'])) {
+            echo $_SESSION['message'];
+        }
+        
     ?>
         <ul>
             <li>
@@ -39,17 +42,17 @@
                 <input type="email"  placeholder="Email Address" id="address" name="clientEmail" <?php if(isset($clientEmail)){echo "value='$clientEmail'";} ?> required>
             </li>
             <li>
-                <label class="label" for="password">Password: </label><br>
+                <label class="label" for="clientPassword">Password: </label><br>
                 <span>Passwords must be at least 8 characters and contain at least 1 number, 
                     1 capital letter and 1 special character</span><br>
-                <input type="password" placeholder="Password" id="password" name="password" 
+                <input type="password" placeholder="Password" id="clientPassword" name="clientPassword"
                 required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
             </li>
         </ul>
         <div class="button">
         <input type="submit" name="submit" id="registbtn" value="Login">
-        <input type="hidden" name="action" value="login"><br>
-    <span class="psw">No account? <a class="regist" href="/phpmotors/accounts?action=registration.php">Sign-up</a></span>
+        <input type="hidden" name="action" value="doLogin"><br>
+    <span class="psw">No account? <a class="regist" href="/phpmotors/accounts?action=register">Sign-up</a></span>
   </div>
 </fieldset>
     </form>          

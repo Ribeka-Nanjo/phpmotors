@@ -7,14 +7,13 @@
 	--color-blue2: #a6cbeb;
 	--my-font: "Share Tech Mono", monospace;
 }
-
 html {
 	box-sizing: border-box;
 }
 
 *,
-*::before,
-*::after {
+*:before,
+*:after {
 	box-sizing: inherit;
 }
 
@@ -26,6 +25,24 @@ body {
 	grid-template-rows: 1fr;
 }
 
+#inv-display {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+#inv-display li {
+	margin-bottom: 0.5em;
+	border: 1px #ccc solid;
+	list-style-type: none;
+	flex: 1 1 auto;
+}
+
+#inv-display li img {
+	max-width: 100%;
+}
+
 #wrapper {
 	width: 100%;
 	background-color: var(--color-white);
@@ -35,7 +52,7 @@ body {
 }
 header {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
 	grid-row: 2;
 	align-items: center;
 	text-align: right;
@@ -64,8 +81,7 @@ nav a {
 
 #account {
 	color: var(--color-black);
-	margin: 1em;
-	padding: 0.5em;
+	grid-column: 1;
 }
 
 #account:hover {
@@ -117,6 +133,12 @@ figure figcaption {
 }
 
 /*content*/
+
+h3,
+.clientPassword {
+	text-align: center;
+}
+
 .d-list,
 .d-list h2 {
 	list-style: none;
@@ -148,13 +170,15 @@ footer {
 
 /* Registeration page */
 
-#regist ul {
+#regist ul,
+#update ul {
 	list-style-type: none;
 	display: table;
 	margin: 0 auto;
 	padding: 2em;
 	border-radius: 5px;
 }
+
 .regist {
 	color: var(--color-black);
 	text-decoration: underline;
@@ -169,7 +193,8 @@ footer {
 }
 
 #login legend,
-#regist legend {
+#regist legend,
+#update legend {
 	max-width: 750px;
 	font-size: 1.5em;
 	padding: 0.5em;
@@ -180,17 +205,19 @@ footer {
 #name,
 #fName,
 #password,
-#address {
+#address,
+#clientPassword {
 	height: 30px;
 	width: 250px;
 	margin: 0.5em 0 0.5em 0;
 }
 
 .loginbtn,
-#registbtn {
+#registbtn,
+#updatebtn {
 	margin: 1em;
 	border-radius: 10px;
-	width: 120px;
+	width: 160px;
 }
 
 button .loginbtn,
@@ -213,7 +240,8 @@ button .loginbtn,
 	padding: 0.3em;
 }
 
-#invVehibtn {
+#invVehibtn,
+#updatebtn {
 	text-align: center;
 	display: block;
 	margin: 0 auto 1em;
@@ -224,4 +252,20 @@ button .loginbtn,
 }
 #ClassificationName {
 	margin-top: 0.5em;
+}
+
+.welcome-message {
+	font-size: 1em;
+	clear: both;
+	text-align: center;
+}
+
+.login-link {
+	float: right;
+	color: var(--color-black);
+}
+
+/*update*/
+#update p {
+	width: 350px;
 }
