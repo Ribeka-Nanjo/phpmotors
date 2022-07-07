@@ -70,4 +70,27 @@
 	.d-review h2 {
 		margin-left: 1em;
 	}
+
+	/*Vehicle details*/
+
+	.car-Details {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 60px;
+	}
+
+	.car-Details img {
+		grid-column: 1/1;
+		width: 300px;
+	}
+	.car-Details h2,
+	.car-Details p,
+	.car-Details h3 {
+		grid-column: 2/3;
+	}
+
+	.car-Details section {
+		margin: 0 auto;
+		display: flex;
+	}
 }

@@ -102,18 +102,17 @@ function getVehiclesByClassification($classificationName){
     return $vehicles;
 
 }
-// get vehicle info by invId
-// function  getInvInfo($invId){
-//     $db = phpmotorsConnect();
-//     $sql = 'SELECT * FROM inventory WHERE invId = :invId';
-//     $stmt = $db->prepare($sql);
-//     $stmt->bindValue(':invId', $invId, PDO::PARAM_STR);
-//     $stmt->execute();
-//     $vehiclesDetail = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//     $stmt->closeCursor();
-//     return $vehiclesDetail;
 
-// }
+// Get information for all vehicles
+function getVehicles(){
+	$db = phpmotorsConnect();
+	$sql = 'SELECT invId, invMake, invModel FROM inventory';
+	$stmt = $db->prepare($sql);
+	$stmt->execute();
+	$invInfo = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	$stmt->closeCursor();
+	return $invInfo;
+}
 
 
 ?>

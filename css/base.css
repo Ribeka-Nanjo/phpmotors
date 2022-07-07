@@ -269,3 +269,23 @@ button .loginbtn,
 #update p {
 	width: 350px;
 }
+
+/*car details page*/
+.car-Details {
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+.car-Details p:nth-child(odd) {
+	background-color: gainsboro;
+	display: flex;
+	align-content: stretch;
+	align-items: center;
+}
+
+.car-Details img {
+	width: 400px;
+}
+.car-Details h3 {
+	text-align: left;
+}
