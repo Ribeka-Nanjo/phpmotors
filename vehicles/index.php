@@ -14,6 +14,8 @@ require_once '../model/accounts-model.php';
 require_once '../model/vehicles-model.php';
 // Get the functions library
 require_once '../library/functions.php';
+// Get the upload
+require_once '../model/uploads-model.php';
 
 
 
@@ -195,6 +197,8 @@ if($invOutcome === 1){
             case 'vehicleView':
                 $invId = filter_input(INPUT_GET, 'invId', FILTER_SANITIZE_NUMBER_INT);
                 $invInfo = getInvItemInfo($invId);
+
+                
 
                 // Get the vehicles info
                 //vehiclesDetail = getInvInfo($invId);
