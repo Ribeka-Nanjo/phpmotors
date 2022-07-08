@@ -29,13 +29,16 @@
     </nav>
 
     <main>
+        <div class="detail-display">
     <h1><?php echo " $invInfo[invModel]"; ?> Vehicles</h1>
     <?php if(isset($message)){
              echo $message; }
     ?>
-    <?php if(isset($vehicleSpecificInfo)){
+    <?php if(isset($vehicleSpecificInfo) && isset($vehicleThumbnail)){
     echo $vehicleSpecificInfo;
+    echo $vehicleThumbnail;
 } ?>
+    </div>
     </main>
 
 

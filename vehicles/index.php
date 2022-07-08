@@ -198,16 +198,14 @@ if($invOutcome === 1){
                 $invId = filter_input(INPUT_GET, 'invId', FILTER_SANITIZE_NUMBER_INT);
                 $invInfo = getInvItemInfo($invId);
 
-                
-
                 // Get the vehicles info
-                //vehiclesDetail = getInvInfo($invId);
+                $vehiclesDetail = getInvInfo($invId);
+                $getThumbnails = getThumbnails($invId);
                 if(empty($invInfo)){
                  $message = "<p class='notice'>Sorry, on $invId could be found.</p>";
                 } else {
-                 $vehicleSpecificInfo = buildVehiclesView($invInfo);
-                //  echo 'hello';
-                //  exit;
+                 $vehicleSpecificInfo = buildVehiclesView($vehiclesDetail);
+                 $vehicleThumbnail = buildThumbnailDisplay($getThumbnails);
                 }
                 include '../view/vehicle-detail.php';
                 break;

@@ -50,20 +50,28 @@ function checkEmail($clientEmail){
     $dv .= "</ul>";
     return $dv;
    }
-
    
    //build function that has specific info
-   function buildVehiclesView($invInfo){
-    $dv = "<section class= 'car-Details'>";
-    $dv .= "<img src='$invInfo[invImage]' alt='Image of $invInfo[invMake] $invInfo[invModel]'>";
-    $dv .= "<h2>$invInfo[invMake] $invInfo[inModel] Details</h2>";
-    $dv .= "<p>$invInfo[invDescription]</p>";
-    $dv .= "<p>Color: $invInfo[invColor]</p>";
-    $dv .= "<p>Number in Stock: $invInfo[invStock]</p>";
-    $dv .= '<h3>Price: $'.number_format($invInfo['invPrice']).'</h3>';
-    $dv .= '</section>';
+   function buildVehiclesView($vehiclesDetail){
+    $dv = "<div class= 'car-Details'>";
+    $dv .= "<img src='$vehiclesDetail[invImage]' alt='Image of $vehiclesDetail[invMake] $vehiclesDetail[invModel]'>";
+    $dv .= "<h2>$vehiclesDetail[invMake] $vehiclesDetail[invModel] Details</h2>";
+    $dv .= "<p>$vehiclesDetail[invDescription]</p>";
+    $dv .= "<p>Color: $vehiclesDetail[invColor]</p>";
+    $dv .= "<p>Number in Stock: $vehiclesDetail[invStock]</p>";
+    $dv .= '<h3>Price: $'.number_format($vehiclesDetail['invPrice']).'</h3>';
+    $dv .= '</div>';
     return $dv;
    }
+
+   function buildThumbnailDisplay($getThumbnails){
+     $dv = "<div class= 'car-thumbnail'>";
+    foreach ($getThumbnails as $thumbnail) {
+    $dv .= "<img src='$thumbnail[imgPath]' alt='Image of $thumbnail[invMake] $thumbnail[invModel]'>";
+    }
+    $dv .= '</div>';
+     return $dv;
+    }
 
 
    /* * ********************************
